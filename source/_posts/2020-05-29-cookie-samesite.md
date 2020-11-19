@@ -53,9 +53,9 @@ $ python3
 ## Browser support
 对于SameSite属性的实现，大部分主流浏览器已完成，等待的是何时将[未来改进措施](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00#section-3)纳入实施（默认值设为Lax，值为None时需将Secure置为Ture）
 * SameSite属性实现情况：
-![samesite-support](https://fseeeye.oss-cn-hangzhou.aliyuncs.com/blog/20200529Samesite/samesite-support.png)
+![samesite-support](./samesite-support.png)
 * SameSite默认值设为Lax及上下文需求Secure：
-![samesite-incrementalism](https://fseeeye.oss-cn-hangzhou.aliyuncs.com/blog/20200529Samesite/samesite-incrementalism.png)
+![samesite-incrementalism](./samesite-incrementalism.png)
 
 需要说明的是，后一项仅是实现该功能，即可以开启，但不默认启用。离SameSite的相关提案正式普遍实施还为时尚早。读者阅读时的浏览器支持，请访问Can I Use自行查看。
 
