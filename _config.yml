@@ -105,7 +105,6 @@ jsonContent:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-##  repo: root@120.78.215.95:/data/GitLibrary/hexo
 deploy:
   type: git
   repo: git@fseeeye.me:/home/git/hexo.git
