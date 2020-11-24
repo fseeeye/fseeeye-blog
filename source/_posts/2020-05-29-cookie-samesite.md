@@ -1,7 +1,7 @@
 ---
 title: Cookie SameSite 食用指南
 date: 2020-05-29 16:29:30
-tags: [Cookie,WEB]
+tags: [WEB]
 abstract: Cookie's attribute SameSite will change the Web Security World
 header_image: /intro/post-bg-huiye.png
 top:

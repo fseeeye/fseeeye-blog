@@ -1,7 +1,7 @@
 ---
 title: Redis Slaveof Attack
 date: 2020-07-28 18:18:17
-tags: [Redis,Vuln,WEB]
+tags: [Vuln,WEB]
 abstract: Redis Vuln shared by LC⚡️BC.
 header_image: /intro/post-bg-huiye.png
 top:
