@@ -17,7 +17,7 @@ top:
 # The foregoing.
 本篇漫谈，我们来讲一下S7Comm协议。它是西门子在1993年推出的私有协议，应用于S7-300/400系列及200系列PLC(略有不同)，监听于`102`端口。
 
-它在OSI七层模型中是实现了应用层、表示层和会话层的协议。实际上更为准确的说，S7Comm建立在传输层的COTP协议(RFC905)之上，作为其Payload进行传输。自S7Comm推出起，TCP/IP已经日渐火热，为了能让协议适配TCP/IP，S7Comm采用在TCP之上模拟COTP服务，并用TPKT(RFC1006)来作为过渡，封装COTP。此处的TCP已经和我们熟知的TCP有些不同，它没有确认机制，被称为ISO-on-TCP协议(RFC1006)。当然，脱离TCP/IP的架构，S7Comm也是完全可以通信的，理论上它是属于COTP的载荷，只不过要使用特殊接口/设备。
+它在OSI七层模型中是实现了应用层、表示层和会话层的协议。实际上更为准确的说，S7Comm建立在传输层的COTP协议(RFC905)之上，作为其Payload进行传输。S7Comm推出伊始，其采用的是ISO传输协议。为了能让协议适配TCP/IP（支持地址路由），并保留原先ISO的特性（面向流量包的数据格式），西门子选择在TCP之上模拟COTP服务，并用TPKT(RFC1006)来作为过渡，封装COTP。我们将采用这种独特结构的传输层协议称为ISO-on-TCP。当然，脱离TCP/IP的架构，S7Comm也是完全可以通信的，理论上它是属于COTP的载荷，只不过要使用特殊接口/设备。(比如S7-400系列的特殊通信处理器（CP 443）)
 
 总结来说，S7Comm以太网传输时模型如下：
 
@@ -71,7 +71,7 @@ Header中有几个关键参数：
   * `0x02`: ACK，acknowledgement without additional field，类似TCP的ACK。
   * `0x03`: Ack_Data，acknowledgement with additional field，一般用于响应Job请求。
   * `0x07`: Userdata，协议扩展，参数字段包含请求/响应ID（用于编程/调试，读取SZL，安全功能，时间设置，循环数据...）。
-* PDUR: Protocol Data Unit Reference，用于标识会话。请求方方仅接收相同PDUR的响应包，来达到会话控制的目的。
+* PDUR: Protocol Data Unit Reference，用于标识会话。请求方仅接收相同PDUR的响应包，来达到会话控制的目的。
 
 暂时了解上述知识即可。
 
